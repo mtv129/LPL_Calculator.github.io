@@ -413,6 +413,165 @@ body {
   background-color: #1d4b72; /* Новый цвет фона */
   color: var(--text-color);
 }
+/* Общие стили для мобильных устройств */
+@media (max-width: 768px) {
+    body {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        background-color: #1d4b72;
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    .calculator {
+        display: inline-block;
+        padding: 10px;
+        background-color: #333;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        margin: 10px auto;
+        background-color: #444;
+        color: var(--tropical-green);
+        font-family: 'Visitor TT1 BRK';
+        border: none;
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 5px;
+        color: var(--text-color);
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Добавьте другие стили по мере необходимости */
+    
+    #header {
+        height: auto;
+        background: var(--primary-blue);
+        border: 2px solid var(--tropical-blue);
+    }
+
+    #effect-wrapper {
+        text-align: center;
+    }
+
+    .cryptor-bluebox {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        border: 1px solid var(--tropical-blue);
+        box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.4);
+        -webkit-mask: linear-gradient(45deg, transparent 0 17px,#fff 0) bottom left,
+                      linear-gradient(-45deg, transparent 0 17px,#fff 0) bottom right,
+                      linear-gradient(135deg, transparent 0 17px,#fff 0) top left,
+                      linear-gradient(-135deg, transparent 0 17px,#fff 0) top right;
+        -webkit-mask-size: 50.5% 50.5%;
+        -webkit-mask-repeat: no-repeat;
+        background: linear-gradient(45deg, var(--tropical-blue) 0 18px,transparent 0) bottom left,
+                    linear-gradient(-45deg, var(--tropical-blue) 0 18px,transparent 0) bottom right,
+                    linear-gradient(135deg, var(--tropical-blue) 0 18px,transparent 0) top left,
+                    linear-gradient(-135deg, var(--tropical-blue) 0 18px,transparent 0) top right,
+                    url(../img/dot-box.png) no-repeat top 20px left 20px,
+                    url(../img/dot-box.png) no-repeat top 20px right 20px,
+                    url(../img/dot-box.png) no-repeat bottom 20px left 20px,
+                    url(../img/dot-box.png) no-repeat bottom 20px right 20px,
+                    repeating-linear-gradient(0deg, rgba(148, 246, 255, .1) 0 15px, var(--shy-blue) 0 16px);
+    }
+
+    .cryptor-bluebox:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+        background: linear-gradient(300deg, rgba(50, 128, 237, 0.8) 10%, rgba(103, 223, 234, 0) 100%);
+        filter: blur(2px);
+        transform: rotate(300deg);
+        z-index: 0;
+    }
+    
+    .cryptor-bluebox.large:after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: auto;
+        right: 0;
+        top: 0;
+        background: linear-gradient(300deg, rgba(50, 128, 237, 0.8) 10%, rgba(103, 223, 234, 0) 86%);
+        filter: blur(2px);
+        transform: rotate(300deg);
+    }
+    
+    ._cryptor-bluebox {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        border: 1px solid var(--tropical-blue);
+        box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.4);
+        -webkit-mask: linear-gradient(45deg, transparent 0 17px,#fff 0) bottom left,
+                      linear-gradient(-45deg, transparent 0 17px,#fff 0) bottom right,
+                      linear-gradient(135deg, transparent 0 17px,#fff 0) top left,
+                      linear-gradient(-135deg, transparent 0 17px,#fff 0) top right;
+        -webkit-mask-size: 50.5% 50.5%;
+        -webkit-mask-repeat: no-repeat;
+        background: linear-gradient(45deg, var(--tropical-blue) 0 18px,transparent 0) bottom left,
+                    linear-gradient(-45deg, var(--tropical-blue) 0 18px,transparent 0) bottom right,
+                    linear-gradient(135deg, var(--tropical-blue) 0 18px,transparent 0) top left,
+                    linear-gradient(-135deg, var(--tropical-blue) 0 18px,transparent 0) top right,
+                    url(../img/dot-box.png) no-repeat top 20px left 20px,
+                    url(../img/dot-box.png) no-repeat top 20px right 20px,
+                    url(../img/dot-box.png) no-repeat bottom 20px left 20px,
+                    url(../img/dot-box.png) no-repeat bottom 20px right 20px,
+                    repeating-linear-gradient(0deg, rgba(148, 246, 255, .1) 0 15px, var(--shy-blue) 0 16px);
+        font-size: 20px;
+    }
+    
+    ._cryptor-bluebox:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 0;
+        background: linear-gradient(300deg, rgba(50, 128, 237, 0.8) 10%, rgba(103, 223, 234, 0) 100%);
+        filter: blur(2px);
+        transform: rotate(300deg);
+        z-index: 0;
+    }
+    
+    ._cryptor-bluebox.large:after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: auto;
+        right: 0;
+        top: 0;
+        background: linear-gradient(300deg, rgba(50, 128, 237, 0.8) 10%, rgba(103, 223, 234, 0) 86%);
+        filter: blur(2px);
+        transform: rotate(300deg);
+    }
+}
+
+
 
     </style>
 </head>
@@ -455,7 +614,7 @@ body {
         </br>
         </br>
             this cultulator is written in LPL for my beloved <a hrf="https://cryptors.io/">Cryptors<a> and I wrote this language for them, now you see the first fan site for cryptors and for cryptors written in the cryptors language (LPL)
-        </iv>
+            </div>
     <script src="LPL 2.0 module.js"></script>
     <lpl>
         var display = document.getElementById("display");
