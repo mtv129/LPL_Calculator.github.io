@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link
+      href="https://fonts.cdnfonts.com/css/visitor-tt1-brk?styles=93238"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>LPL Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #1a1a1a; /* Тёмный фон */
+            background-color: #1d4b72; /* Тёмный фон */
             color: #fff; /* Белый текст */
             margin: 0;
             padding: 0;
@@ -20,15 +31,15 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-        input[type="text"] {
-            width: 90%;
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #444; /* Цвет фона поля ввода */
-            color: #fff; /* Цвет текста в поле ввода */
-            border: none;
-            border-radius: 5px;
-        }
+input[type="text"] {
+  width: 50%;
+  margin: 10px auto; /* Измененное значение margin */
+  background-color: #444; /* Цвет фона поля ввода */
+  color: var(--tropical-green); /* Измененный цвет текста */
+  font-family: "Visitor TT1 BRK"; /* Шрифт */
+  border: none;
+}
+
         button {
             padding: 10px 20px;
             margin: 5px;
@@ -39,36 +50,412 @@
             border-radius: 5px;
             color: #fff; /* Цвет текста на кнопках */
         }
-        button:hover {
-            background-color: #ff3f9e; /* Цвет кнопок при наведении */
-        }
+
+.cryptor-bluebox {
+  position: relative;
+  width: 20%; /* Увеличиваем ширину */
+  height: 320px; /* Увеличиваем высоту */
+  margin: 100px auto; /* Добавляем отступы сверху и снизу, и центрируем по горизонтали */
+  overflow: hidden;
+  border: 1px solid var(--tropical-blue);
+  border-right-width: 2px;
+  box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.4);
+  -webkit-mask:
+     linear-gradient(  45deg, transparent 0 17px,#fff 0) bottom left,
+     linear-gradient( -45deg, transparent 0 17px,#fff 0) bottom right,
+     linear-gradient( 135deg, transparent 0 17px,#fff 0) top left,
+     linear-gradient(-135deg, transparent 0 17px,#fff 0) top right;
+  -webkit-mask-size: 50.5% 50.5%;
+  -webkit-mask-repeat: no-repeat;
+  background:
+     linear-gradient(  45deg, var(--tropical-blue) 0 18px,transparent 0) bottom left,
+     linear-gradient( -45deg, var(--tropical-blue) 0 18px,transparent 0) bottom right,
+     linear-gradient( 135deg, var(--tropical-blue) 0 18px,transparent 0) top left,
+     linear-gradient(-135deg, var(--tropical-blue) 0 18px,transparent 0) top right,
+     url(../img/dot-box.png) no-repeat top 20px left 20px,
+     url(../img/dot-box.png) no-repeat top 20px right 20px,
+     url(../img/dot-box.png) no-repeat bottom 20px left 20px,
+     url(../img/dot-box.png) no-repeat bottom 20px right 20px,
+     repeating-linear-gradient(0deg, rgba(148, 246, 255, .1) 0 15px, var(--shy-blue) 0 16px);
+}
+
+
+
+
+.cryptor-bluebox:before {
+  content: "";
+  position: absolute;
+  width: 935.95px;
+  height: 170px;
+  left: -135px;
+  top: 1.5px;
+  background: linear-gradient(
+    300deg,
+    rgba(50, 128, 237, 0.8) 10%,
+    rgba(103, 223, 234, 0) 100%
+  );
+  filter: blur(2px);
+  transform: rotate(300deg);
+  z-index: 0;
+}
+
+.cryptor-bluebox.large:after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 935.95px;
+  height: 130px;
+  right: -320px;
+  top: 1.5px;
+  background: linear-gradient( 300deg, rgba(50, 128, 237, 0.8) 10%, rgba(103, 223, 234, 0) 86% );
+  filter: blur(2px);
+  transform: rotate(300deg);
+  z-index: 0;
+}
+
+.cryptor-bluebox * {
+  z-index: 1;
+}
+._cryptor-bluebox {
+  position: relative;
+  width: 50%; /* Увеличиваем ширину */
+  height: 320px; /* Увеличиваем высоту */
+  margin: 100px auto; /* Добавляем отступы сверху и снизу, и центрируем по горизонтали */
+  overflow: hidden;
+  border: 1px solid var(--tropical-blue);
+  border-right-width: 2px;
+  box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.4);
+  -webkit-mask:
+     linear-gradient(  45deg, transparent 0 17px,#fff 0) bottom left,
+     linear-gradient( -45deg, transparent 0 17px,#fff 0) bottom right,
+     linear-gradient( 135deg, transparent 0 17px,#fff 0) top left,
+     linear-gradient(-135deg, transparent 0 17px,#fff 0) top right;
+  -webkit-mask-size: 50.5% 50.5%;
+  -webkit-mask-repeat: no-repeat;
+  background:
+     linear-gradient(  45deg, var(--tropical-blue) 0 18px,transparent 0) bottom left,
+     linear-gradient( -45deg, var(--tropical-blue) 0 18px,transparent 0) bottom right,
+     linear-gradient( 135deg, var(--tropical-blue) 0 18px,transparent 0) top left,
+     linear-gradient(-135deg, var(--tropical-blue) 0 18px,transparent 0) top right,
+     url(../img/dot-box.png) no-repeat top 20px left 20px,
+     url(../img/dot-box.png) no-repeat top 20px right 20px,
+     url(../img/dot-box.png) no-repeat bottom 20px left 20px,
+     url(../img/dot-box.png) no-repeat bottom 20px right 20px,
+     repeating-linear-gradient(0deg, rgba(148, 246, 255, .1) 0 15px, var(--shy-blue) 0 16px);
+     font-size: 20px;
+}
+
+
+
+
+._cryptor-bluebox:before {
+  content: "";
+  position: absolute;
+  width: 935.95px;
+  height: 170px;
+  left: -135px;
+  top: 1.5px;
+  background: linear-gradient(
+    300deg,
+    rgba(50, 128, 237, 0.8) 10%,
+    rgba(103, 223, 234, 0) 100%
+  );
+  filter: blur(2px);
+  transform: rotate(300deg);
+  z-index: 0;
+}
+
+._cryptor-bluebox.large:after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 935.95px;
+  height: 130px;
+  right: -320px;
+  top: 1.5px;
+  background: linear-gradient( 300deg, rgba(50, 128, 237, 0.8) 10%, rgba(103, 223, 234, 0) 86% );
+  filter: blur(2px);
+  transform: rotate(300deg);
+  z-index: 0;
+}
+
+._cryptor-bluebox * {
+  z-index: 1;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+:root {
+    --primary-color: #e52785; /* Основной цвет */
+    --background-color: #1a1a1a; /* Фоновый цвет */
+    --text-color: #fff; /* Цвет текста */
+    --button-hover-color: #ff3f9e; /* Цвет кнопок при наведении */
+}
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+.calculator {
+    margin: 20px auto; /* Выравнивание по центру */
+    padding: 20px;
+}
+
+
+#header.with-lines {
+    background: repeating-linear-gradient( 0deg, transparent 0 7px, var(--shy-blue) 0 8px );
+}
+#header {
+  display: flex;
+  justify-content: center; /* Выравнивание по горизонтали */
+  align-items: center; /* Выравнивание по вертикали */
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 56px;
+  border-right: 0;
+  z-index: 999;
+  width: 100%; /* Чтобы растянуть header на всю ширину экрана */
+}
+
+#effect-wrapper {
+  text-align: center; /* Чтобы текст внутри был по центру */
+}
+#header {
+    width: calc(100% - 5px);
+    background: var(--primary-blue);
+    border: 2px solid var(--tropical-blue);
+}
+:root {
+    --primary-blue: #0832bf;
+    --primary-bg-blue: #0741d4;
+    --tropical-blue: #94f6ff;
+    --green-cta: #418e8d;
+    --tropical-green: #80fa80;
+    --deep-blue: #1e4a70;
+    --light-blue: #2458bb;
+    --shy-blue: rgba(148, 246, 255, 0.2);
+}
+#newsletter-inputs input[type="text"] {
+    padding-left: 10px;
+    height: 46px;
+    width: 200px;
+    float: left;
+}
+#newsletter-inputs input[type="text"], #newsletter-inputs input[type="submit"] {
+    color: var(--tropical-green);
+    background-color: var(--green-cta);
+    height: 50px;
+    outline: none;
+    border: 1px solid var(--tropical-green);
+    font-family: "Exo", sans-serif;
+}
+input {
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-variant-alternates: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    font-optical-sizing: ;
+    font-kerning: ;
+    font-feature-settings: ;
+    font-variation-settings: ;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+.btn-primary {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--tropical-green);
+    background-color: var(--green-cta);
+    border: 1px solid var(--tropical-green);
+    font-family: "Visitor TT1 BRK";
+    padding: 12px 20px;
+    font-size: 18px;
+    transition: all ease 500ms;
+    box-shadow: 0 0 0 transparent;
+}
+p, a {
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+:root {
+    --primary-blue: #0832bf;
+    --primary-bg-blue: #0741d4;
+    --tropical-blue: #94f6ff;
+    --green-cta: #418e8d;
+    --tropical-green: #80fa80;
+    --deep-blue: #1e4a70;
+    --light-blue: #2458bb;
+    --shy-blue: rgba(148, 246, 255, 0.2);
+}
+.btn-primary:after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    bottom: -1px;
+    background: transparent;
+    transition: all ease 500ms;
+    border: 1px solid var(--tropical-green);
+    box-shadow: 0 0 0 transparent;
+}
+.btn-primary:hover {
+    background-color: #80fa80;
+}
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--tropical-green);
+  background-color: var(--green-cta);
+  border: 1px solid var(--tropical-green);
+  font-family: "Visitor TT1 BRK";
+  padding: 10px 10px;
+  font-size: 18px;
+  transition: all ease 500ms;
+  box-shadow: 0 0 0 transparent;
+  width: 45px; /* Ширина кнопок */
+  height: 45px; /* Высота кнопок */
+}
+
+.btn-primary:after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: -1px;
+  bottom: -1px;
+  background: transparent;
+  transition: all ease 500ms;
+  border: 1px solid var(--tropical-green);
+  box-shadow: 0 0 0 transparent;
+}
+
+.btn-primary:hover {
+  background-color: #80fa80;
+}
+#newsletter-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.cryptor-bluebox * {
+    z-index: 1;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+:root {
+    --primary-blue: #0832bf;
+    --primary-bg-blue: #0741d4;
+    --tropical-blue: #94f6ff;
+    --green-cta: #418e8d;
+    --tropical-green: #80fa80;
+    --deep-blue: #1e4a70;
+    --light-blue: #2458bb;
+    --shy-blue: rgba(148, 246, 255, 0.2);
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #1d4b72; /* Новый цвет фона */
+  color: var(--text-color);
+}
+
     </style>
 </head>
 <body>
-    <h1>LPL Calculator</h1>
-    <div class="calculator">
-        <input type="text" id="display" disabled>
+    <div id="header" :class="isMenuOpen ? '' : 'with-lines'" class="with-lines">
+    <div id="effect-wrapper"><h1>LPL Calculator</h1></div></div>
+
+    
+    
+    <div class="cryptor-bluebox">
+        <div id="newsletter-inputs">
+<input type="text" id="display" name="EMAIL"">
+</div>
+
         <br>
-        <button id="btn1">1</button>
-        <button id="btn2">2</button>
-        <button id="btn3">3</button>
-        <button id="btnPlus">+</button>
+        <button class="btn-primary" id="btn1">1</button>
+        <button class="btn-primary"id="btn2">2</button>
+        <button class="btn-primary"id="btn3">3</button>
+        <button class="btn-primary"id="btnPlus">+</button>
         <br>
-        <button id="btn4">4</button>
-        <button id="btn5">5</button>
-        <button id="btn6">6</button>
-        <button id="btnMinus">-</button>
+        <button class="btn-primary"id="btn4">4</button>
+        <button class="btn-primary"id="btn5">5</button>
+        <button class="btn-primary"id="btn6">6</button>
+        <button class="btn-primary"id="btnMinus">-</button>
         <br>
-        <button id="btn7">7</button>
-        <button id="btn8">8</button>
-        <button id="btn9">9</button>
-        <button id="btnMultiply">*</button>
+        <button class="btn-primary"id="btn7">7</button>
+        <button class="btn-primary"id="btn8">8</button>
+        <button class="btn-primary"id="btn9">9</button>
+        <button class="btn-primary"id="btnMultiply">*</button>
         <br>
-        <button id="btn0">0</button>
-        <button id="btnClear">C</button>
-        <button id="btnEquals">=</button>
-        <button id="btnDivide">/</button>
+        <button class="btn-primary"id="btn0">0</button>
+        <button class="btn-primary"id="btnClear">C</button>
+        <button class="btn-primary"id="btnEquals">=</button>
+        <button class="btn-primary"id="btnDivide">/</button>
     </div>
+        <div class="_cryptor-bluebox">
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+            this cultulator is written in LPL for my beloved <a hrf="https://cryptors.io/">Cryptors<a> and I wrote this language for them, now you see the first fan site for cryptors and for cryptors written in the cryptors language (LPL)
+        </iv>
     <script src="LPL 2.0 module.js"></script>
     <lpl>
         var display = document.getElementById("display");
@@ -171,5 +558,5 @@
             appendToDisplay('/');
         });
     </lpl>
-</body>
+
 </html>
